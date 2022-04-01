@@ -4,15 +4,16 @@ require 'rails_helper'
 describe 'Welcome Page' do
   it 'can show a button to login as a learner' do
     visit '/'
-    expect(page).to have_button('learner-login')
-    click_button 'learner-login'
+    expect(page).to have_button('Learner Login')
+    click_button 'Learner Login'
     expect(current_path).to eq("/login")
   end
 
   it 'can show a button login as a manager' do
     visit '/'
-    expect(page).to have_button('manager-login')
-    click_button 'manager-login'
+    save_and_open_page
+    expect(page).to have_button('Manager Login')
+    click_button 'Manager Login'
     expect(current_path).to eq("/login")
 
   end
