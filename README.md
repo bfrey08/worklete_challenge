@@ -87,7 +87,7 @@ Please add thoughtful commit messages as you work on this, so that we can better
 - Bootstrap
 
 
-##4 Hour Completion point
+## 4 Hour Completion point
 At the end of 4 hours I have completed 7/10 tickets for functionality. If I was to continue working on the project I would complete the last 3 features
 
 - Finish the Learner_quizzes show page
