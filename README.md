@@ -76,6 +76,9 @@ Please add thoughtful commit messages as you work on this, so that we can better
 
  ```
 
+## Schema
+![Schema](./app/assets/images/schema_pic.png)
+
 ## Technology used
 - Ruby 2.7.2
 - Rails 5.2.6
