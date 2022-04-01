@@ -42,7 +42,6 @@ describe 'LearnerQuizzes index page' do
   end
 
   it 'can show all available quizzes for a learner to take' do
-    save_and_open_page
     expect(page).to have_content("Available Quizzes")
     expect(page).to have_link("#{@quiz1.id}")
     expect(page).to have_link("#{@quiz2.id}")
