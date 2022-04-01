@@ -4,6 +4,9 @@ class LearnerQuizzesController < ApplicationController
   end
 
   def show
+    @quiz = Quiz.find(params[:quiz_id])
+    binding.pry
+
   end
 
 end

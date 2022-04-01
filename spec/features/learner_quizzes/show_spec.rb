@@ -39,9 +39,11 @@ describe 'LearnerQuizzes index page' do
 
     expect(current_path). to eq("/learners/#{@learner.id}/quizzes")
 
+    click_link "#{@quiz1.id}"
+
   end
 
-  it 'can show three questions' do
+  it 'can show three questions with answer buttons' do
     expect(page).to have_content("Question 1")
     within('div.question1')
       expect(page).to have_content("Please press true")

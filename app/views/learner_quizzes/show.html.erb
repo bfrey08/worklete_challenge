@@ -1,0 +1,10 @@
+Quiz #:<%= @quiz.id%>
+<br>
+<% @quiz.questions.each_with_index do |question,index| %>
+<%= "Question #{index + 1}:"%>
+<%= question.text %>
+<%= button_to 'True', "/learners/#{params[:learner_id]}/quizzes/#{@quiz.id}", params: {learner_answer: "True"}, class: "btn btn-secondary", method: :patch %><br>
+<%= button_to 'False', "/learners/#{params[:learner_id]}/quizzes/#{@quiz.id}", params: {learner_answer: "False"}, class: "btn btn-secondary", method: :patch %><br>
+
+<br>
+<% end %>
