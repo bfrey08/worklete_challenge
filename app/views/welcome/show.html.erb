@@ -1,1 +1,18 @@
-test
+<div class="container-lg text-center">
+  <h2>Log In to Your Account</h2>
+
+
+  <%= form_with url: '/login', method: :post, local: true do |f| %>
+    <br/>
+    <div class="row mb-3">
+      <%= f.label :username, "Username", class: "col-sm-3 col-form-label text-center" %>
+      <%= f.text_field :username, class: "col-sm-8" %><br>
+    </div>
+    <div class="row mb-3">
+      <%= f.label :password, "Password", class: "col-sm-3 col-form-label text-center" %>
+      <%= f.password_field :password, class: "col-sm-8" %><br>
+    </div>
+    <%= f.hidden_field :role, value: params[:role] %>
+    <%= f.submit "Log In", class: "col-sm-3" %>
+  <% end %>
+</div>

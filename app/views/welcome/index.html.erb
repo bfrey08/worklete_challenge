@@ -1,2 +1,2 @@
-<%= button_to 'Learner Login', "/login", params: Hash.new(learner: true), class: "btn btn-secondary", method: :get %><br>
-<%= button_to 'Manager Login', "/login", params: Hash.new(manager: true), class: "btn btn-secondary", method: :get %><br>
+<%= button_to 'Learner Login', "/login", params: { role: 'learner' }, class: "btn btn-secondary", method: :get %><br>
+<%= button_to 'Manager Login', "/login", params: { role: 'manager' }, class: "btn btn-secondary", method: :get %><br>

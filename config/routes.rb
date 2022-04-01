@@ -3,4 +3,8 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   get '/login', to: 'welcome#show'
+  post '/login', to: 'welcome#new'
+
+  get 'manager/:manager_id/quiz', to: 'manager_quizzes#controller'
+  get 'learner/:learner_id/quiz', to: 'learner_quizzes#controller'
 end
