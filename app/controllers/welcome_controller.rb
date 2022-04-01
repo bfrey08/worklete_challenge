@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
   def index
-      redirect_to learner_quiz_path if session[:learner_id]
-      redirect_to manager_quiz_path if session[:manager_id]
+      redirect_to "/learners/#{session[:learner_id]}/quizzes" if session[:learner_id]
+      redirect_to "/managers/#{session[:manager_id]}/quizzes" if session[:manager_id]
   end
 
   def show
