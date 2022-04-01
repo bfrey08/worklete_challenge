@@ -39,7 +39,6 @@ describe 'Login Page' do
     fill_in :password, with: 'testing'
 
     click_button 'Log In'
-    save_and_open_page
     expect(current_path). to eq("/managers/#{@manager.id}/quizzes")
 
   end

@@ -1,1 +1,5 @@
-test
+Available Quizzes
+
+<% @quizzes.each do |quiz| %>
+<%= link_to "#{quiz.id}", "/learners/#{params[:learner_id]}/quizzes/#{quiz.id}" %>
+<% end %>
