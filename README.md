@@ -1,4 +1,4 @@
-# About
+## About
 
 Worklete Coding Challenge with the following directions:
 
@@ -51,7 +51,8 @@ We ask that you take no more than 4hrs to complete this code challenge. We are i
 
 Please add thoughtful commit messages as you work on this, so that we can better understand how you tackled the challenge; this helps us understand how you communicate.
 ```
-#Setup
+
+## Setup
 
 
  - Clone the repo on local
@@ -75,7 +76,7 @@ Please add thoughtful commit messages as you work on this, so that we can better
 
  ```
 
-#Technology used
+## Technology used
 - Ruby 2.7.2
 - Rails 5.2.6
 - PostgreSQL
@@ -84,3 +85,18 @@ Please add thoughtful commit messages as you work on this, so that we can better
 - Capybara
 - Bcrypt
 - Bootstrap
+
+
+##4 Hour Completion point
+At the end of 4 hours I have completed 7/10 tickets for functionality. If I was to continue working on the project I would complete the last 3 features
+
+- Finish the Learner_quizzes show page
+- Manager_quizzes show page
+- Manager_quizzes index page
+
+
+After the MVP was complete I would circle back and finish the following:
+
+- Add authorization to all required pages
+- Styling
+- Add an "average_score" function to the manager model that allows you to see the average score of all quizzes associated with that manager
