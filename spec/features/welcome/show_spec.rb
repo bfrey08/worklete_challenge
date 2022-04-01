@@ -2,7 +2,12 @@ require 'rails_helper'
 
 
 describe 'Login Page' do
+
+
   it 'can show a form that requires a username and password' do
+    @learner = Learner.new(username: 'learner@test.com', password: 'testing')
+    @learner.password = 'testing'
+    @learner.save
     visit '/'
     expect(page).to have_button('Learner Login')
     click_button 'Learner Login'
@@ -16,7 +21,7 @@ describe 'Login Page' do
 
     click_button 'Log In'
 
-    expect(current_path). to eq("/learner/#{@learner.id}/quiz")
+    expect(current_path). to eq("/learners/#{@learner.id}/quizzes")
   end
 
   it 'can redirect to the appropriate page either learner or manager show' do
@@ -34,8 +39,8 @@ describe 'Login Page' do
     fill_in :password, with: 'testing'
 
     click_button 'Log In'
-
-    expect(current_path). to eq("/manager/#{@manager.id}/quiz")
+    save_and_open_page
+    expect(current_path). to eq("/managers/#{@manager.id}/quizzes")
 
   end
 

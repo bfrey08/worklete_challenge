@@ -12,12 +12,19 @@ class WelcomeController < ApplicationController
       manager = Manager.find_by(username: params[:username])
       if manager.password == params[:password]
         session[:manager_id] = manager.id
-        redirect_to "manager/#{manager.id}/quiz"
+        redirect_to "/managers/#{manager.id}/quizzes"
       else
         redirect_to root
       end
 
     elsif params[:role] == 'learner'
+      learner = Learner.find_by(username: params[:username])
+      if learner.password == params[:password]
+        session[:learner_id] = learner.id
+        redirect_to "/learners/#{learner.id}/quizzes"
+      else
+        redirect_to root
+      end
     else
     end
   end

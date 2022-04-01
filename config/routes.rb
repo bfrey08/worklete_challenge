@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   get '/login', to: 'welcome#show'
   post '/login', to: 'welcome#new'
 
-  get 'manager/:manager_id/quiz', to: 'manager_quizzes#controller'
-  get 'learner/:learner_id/quiz', to: 'learner_quizzes#controller'
+  get 'managers/:manager_id/quizzes', to: 'manager_quizzes#index'
+  get 'learners/:learner_id/quizzes', to: 'learner_quizzes#index'
 end
