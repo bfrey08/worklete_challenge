@@ -59,4 +59,12 @@ describe 'LearnerQuizzes index page' do
       expect(page).to have_button("False")
   end
 
+  it 'Once an answer is submitted, the page is refreshed and no longer shows the question' do
+    within('div.question1')
+      click_button 'True'
+
+    expect(page).to not_have_content("Question 1")
+    expect(@quiz_questions1.result).to eq("correct")
+  end
+
 end
