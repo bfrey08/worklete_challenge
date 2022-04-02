@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   get 'managers/:manager_id/quizzes/:quiz_id', to: 'manager_quizzes#show'
   get 'learners/:learner_id/quizzes', to: 'learner_quizzes#index'
   get 'learners/:learner_id/quizzes/:quiz_id', to: 'learner_quizzes#show'
+  patch 'learners/:learner_id/quizzes/:quiz_id', to: 'learner_quizzes#update'
+
 end
