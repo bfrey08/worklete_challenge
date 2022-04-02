@@ -7,6 +7,10 @@ class LearnerQuizzesController < ApplicationController
 
     @quiz = Quiz.find(params[:quiz_id])
     @quiz_questions = @quiz.quiz_questions.where(result: "unanswered")
+    if @quiz_questions.count == 0
+      redirect_to "/learners/#{params[:learner_id]}/quizzes"
+      flash[:notice] = "Your score was #{@quiz.score}"
+    end
   end
 
   def update
@@ -15,8 +19,11 @@ class LearnerQuizzesController < ApplicationController
     @question = @quiz_question.question
     if @question.answer == params[:learner_answer]
       QuizQuestion.update(@quiz_question.id, result: "correct")
+      flash[:notice] = 'You got the question correct!'
     else
       QuizQuestion.update(@quiz_question.id, result: "incorrect")
+      flash[:error] = 'You got the question incorrect'
+
     end
 
     redirect_to "/learners/#{params[:learner_id]}/quizzes/#{@quiz.id}"
