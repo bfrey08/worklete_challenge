@@ -30,6 +30,7 @@ RSpec.describe Quiz, type: :model do
 
   it "can calculate the score of a quiz" do
     expect(@quiz1.score).to eq('100%')
+    expect(@quiz2.score).to eq('0%')
   end
 
   end
