@@ -6,7 +6,6 @@ class Quiz < ApplicationRecord
 
 
   def score
-
     correct = quiz_questions.where(result: "correct")
     incorrect = quiz_questions.where(result: "incorrect")
 
