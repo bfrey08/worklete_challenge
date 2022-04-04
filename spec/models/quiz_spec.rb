@@ -9,8 +9,8 @@ RSpec.describe Quiz, type: :model do
     @manager = Manager.new(username: 'manager@test.com', password: 'testing')
     @manager.password = 'testing'
     @manager.save
-    @quiz1 = Quiz.create(manager_id: @manager.id, learner_id: @learner.id, status: 'unfinished')
-    @quiz2 = Quiz.create(manager_id: @manager.id, learner_id: @learner.id, status: 'unfinished')
+    @quiz1 = Quiz.create(manager_id: @manager.id, learner_id: @learner.id)
+    @quiz2 = Quiz.create(manager_id: @manager.id, learner_id: @learner.id)
     @question1 = Question.create(text: "Please press true", answer: "true")
     @question2 = Question.create(text: "Please press false", answer: "false")
     @question3 = Question.create(text: "Please do not press false", answer: "true")
@@ -31,6 +31,11 @@ RSpec.describe Quiz, type: :model do
   it "can calculate the score of a quiz" do
     expect(@quiz1.score).to eq('100%')
     expect(@quiz2.score).to eq('0%')
+  end
+
+  it "can show the status of a quiz" do
+    expect(@quiz1.status).to eq('complete')
+    expect(@quiz2.status).to eq('not started')
   end
 
   end
