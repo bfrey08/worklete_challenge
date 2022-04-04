@@ -25,8 +25,8 @@ describe 'ManagerQuizzes index page' do
     @quiz_questions5 = QuizQuestion.create(result: 'unanswered', question_id: @question4.id, quiz_id: @quiz2.id)
     @quiz_questions6 = QuizQuestion.create(result: 'unanswered', question_id: @question1.id, quiz_id: @quiz2.id)
     @quiz_questions7 = QuizQuestion.create(result: 'unanswered', question_id: @question1.id, quiz_id: @quiz3.id)
-    @quiz_questions8 = QuizQuestion.create(result: 'correct', question_id: @question2.id, quiz_id: @quiz4.id)
-    @quiz_questions9 = QuizQuestion.create(result: 'correct', question_id: @question3.id, quiz_id: @quiz5.id)
+    @quiz_questions8 = QuizQuestion.create(result: 'correct', question_id: @question2.id, quiz_id: @quiz3.id)
+    @quiz_questions9 = QuizQuestion.create(result: 'correct', question_id: @question3.id, quiz_id: @quiz3.id)
 
     visit '/'
     expect(page).to have_button('Manager Login')
@@ -34,8 +34,10 @@ describe 'ManagerQuizzes index page' do
     expect(page).to have_content("Log In to Your Account")
     fill_in :username, with: 'manager@test.com'
     fill_in :password, with: 'testing'
+
     click_button 'Log In'
-    expect(current_path). to eq("/managers/#{@manager.id}/quizzes")
+    
+    expect(current_path).to eq("/managers/#{@manager.id}/quizzes")
 
   end
   it 'can show the learners that have quizzes with a manager' do
