@@ -14,7 +14,15 @@ class Quiz < ApplicationRecord
       percent = 0
     end
     "#{percent.round}%"
+  end
 
-
+  def status
+    if quiz_questions.where(result: "unanswered").count == 0
+      "complete"
+    elsif quiz_questions.where(result: "correct").count > 0 || quiz_questions.where(result: "incorrect").count > 0 && quiz_questions.where(result: "unanswered").count > 0
+      "incomplete"
+    else
+      "not started"
+    end
   end
 end
