@@ -13,8 +13,8 @@
 @manager.save
 
 
-@quiz1 = Quiz.create(manager_id: @manager.id, learner_id: @learner.id, status: 'unfinished')
-@quiz2 = Quiz.create(manager_id: @manager.id, learner_id: @learner.id, status: 'unfinished')
+@quiz1 = Quiz.create(manager_id: @manager.id, learner_id: @learner.id)
+@quiz2 = Quiz.create(manager_id: @manager.id, learner_id: @learner.id)
 @question1 = Question.create(text: "Please press true", answer: "true")
 @question2 = Question.create(text: "Please press false", answer: "false")
 @question3 = Question.create(text: "Please do not press false", answer: "true")
