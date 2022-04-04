@@ -36,7 +36,7 @@ describe 'ManagerQuizzes index page' do
     fill_in :password, with: 'testing'
 
     click_button 'Log In'
-    
+
     expect(current_path).to eq("/managers/#{@manager.id}/quizzes")
 
   end
