@@ -6,14 +6,18 @@ class Quiz < ApplicationRecord
 
 
   def score
-    correct = quiz_questions.where(result: "correct")
-    incorrect = quiz_questions.where(result: "incorrect")
-    if correct.count > 0
-      percent = (correct.count.to_f / (correct.count.to_f + incorrect.count.to_f)) * 100
+    if status != "complete"
+      percent = "N/A"
     else
-      percent = 0
+      correct = quiz_questions.where(result: "correct")
+      incorrect = quiz_questions.where(result: "incorrect")
+      if correct.count > 0
+        percent = (correct.count.to_f / (correct.count.to_f + incorrect.count.to_f)) * 100
+      else
+        percent = 0
+      end
+      "#{percent.round}%"
     end
-    "#{percent.round}%"
   end
 
   def status
