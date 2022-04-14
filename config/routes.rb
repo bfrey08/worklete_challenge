@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   get 'learners/:learner_id/quizzes/:quiz_id', to: 'learner_quizzes#show'
   patch 'learners/:learner_id/quizzes/:quiz_id', to: 'learner_quizzes#update'
 
+  mount ActionCable.server => '/cable'
+
 end
