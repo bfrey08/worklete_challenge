@@ -1,6 +1,5 @@
 class ManagerQuizChannel < ApplicationCable::Channel
   def subscribed
-    binding.pry
      stream_from "manager_#{params[:learner_id]}_quiz_channel"
   end
 

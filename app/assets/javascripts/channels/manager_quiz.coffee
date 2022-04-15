@@ -9,7 +9,8 @@ App.manager_quiz = App.cable.subscriptions.create {  channel: "ManagerQuizChanne
     # Called when the subscription has been terminated by the server
 
   received: (data) ->
-    alert "#{data["msg"]}"
-
+  #  alert "#{data["msg"]}"
+    `wip(data);
+    `
   # score: (quiz_id) ->
   #   @perform 'score', quiz_id: quiz_id

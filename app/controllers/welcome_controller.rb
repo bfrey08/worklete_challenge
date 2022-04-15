@@ -1,7 +1,11 @@
 class WelcomeController < ApplicationController
   def index
-      redirect_to "/learners/#{session[:learner_id]}/quizzes" if session[:learner_id]
-      redirect_to "/managers/#{session[:manager_id]}/quizzes" if session[:manager_id]
+      if session[:learner_id]
+        redirect_to "/learners/#{session[:learner_id]}/quizzes" if session[:learner_id] && session[:manager_id]
+      elsif session[:manager_id]
+        redirect_to "/managers/#{session[:manager_id]}/quizzes" if session[:manager_id]
+      else
+      end
   end
 
   def show
