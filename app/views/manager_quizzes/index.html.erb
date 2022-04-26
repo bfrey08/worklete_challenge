@@ -1,1 +1,27 @@
-test
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Quiz #</th>
+      <th scope="col">Username</th>
+      <th scope="col">Status</th>
+      <th scope="col">Score</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @quizzes.each do |quiz| %>
+    <tr>
+      <th scope="row"><%= quiz.id %></th>
+      <td><%= quiz.learner.username %></td>
+      <td><%= quiz.status %></td>
+      <td><%= quiz.score %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<style>
+  .alert-success:empty {
+    display: none;
+  }
+</style>
+<div class="alert alert-success container update-scores" id="update-score" style="text-align:center;" role="alert"></div>
